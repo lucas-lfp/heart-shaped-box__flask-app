@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="ml-head-div">
+    <h1>Evaluate your risk</h1>
+    <p>
+    Are you at risk of a cardiovascular disease ? This model was trained
+    on data from more than 65000 subjects either with or without cardiovascular
+    disease. Enter your data below to find out. 
+    </p>
+</div>
+<div>
+    <form method="POST">
+        {{ user_form.hidden_tag() }}
+        
+        <p class = "input-category">
+            Demographic status
+        </p>
+        <p class = "input-field">
+        {{ user_form.age_input.label }}
+        {{ user_form.age_input() }}
+        <span class = "warning-msg">{{ warning_age }}</span>
+        <br>
+        {{ user_form.weight_input.label }}
+        {{ user_form.weight_input() }}
+        <br>
+        {{ user_form.height_input.label }}
+        {{ user_form.height_input() }}
+        <span class = "warning-msg">{{ warning_height }}</span>
+        </p>
+        <p class = "input-category">Blood Pressure</p>
+        <p class = "input-field">
+        {{ user_form.aphi_input.label }}
+        {{ user_form.aphi_input() }}
+        <br>
+        {{ user_form.aplo_input.label }}
+        {{ user_form.aplo_input() }}
+        <span class = "warning-msg">{{ warning_bp }}</span>
+        </p>
+        <p class = "input-category">Cholesterol</p>
+        <ul class = "input-field">
+        {{ user_form.cholesterol_input(style="list-style:none") }}
+        </ul>
+        <p class = "input-category">Glucose</p>
+        <ul class = "input-field">
+        {{ user_form.gluc_input(style="list-style:none") }}
+        </ul>
+        {{ user_form.submit() }}
+    </form>
+</div>
+<div>
+    <p>
+        {{ test_result|safe }}
+    </p>
+</div>
+
+
+
+{% endblock %}

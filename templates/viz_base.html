@@ -1,0 +1,30 @@
+{% extends "viz_home.html" %}
+
+{% block content %}
+    {{ super() }}
+
+<div id = "viz-content">
+    <h1 class = "viz-h1">{{ title }}</h1>
+    <h2 class = "viz-h2">Variable Description</h2>
+    <div>
+        {{ table|safe }}
+    </div>
+    <div>
+        <h2 class = "viz-h2">Visualisation</h2>
+    </div>
+    <div>
+        <img src = "{{ img }}" alt="Visualization">
+    </div>
+    <div>
+        <h2 class = "viz-h2">Variable Analysis</h2>
+        <div class = "analysis-div">{{ analysis|safe }}</div>
+    </div>
+    <div>
+        <h2 class = "viz-h2">Conclusion</h2>
+        <p>{{ conclusion|safe }}</p>
+    </div>
+    <div>
+        <a href="#top-anchor" class="back-to-top">Back to Top</a>
+    </div>
+</div>
+{% endblock %}

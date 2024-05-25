@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='hsb_app_style.css') }}">
+</head>
+<body>
+    <a id="top-anchor"></a>
+    <div class = "main">
+        <div id = "full-nav">
+            <nav id = "main-nav">
+                <ul class = "ul-nav">
+                    <li><a href="/" class = "main-content">Home</a></li>
+                    <li><a href="/ml" class = "main-content">Test the Model</a></li>
+                    <li><a href="/viz-home" class = "main-content">Explore the Data</a></li>
+                    <li><a href="/about" class = "main-content">About</a></li>
+                </ul>
+            </nav>
+            <div>
+                <p id = "app-head">
+                    Cardiovascular Disease Detection Tool
+                </p>
+                <p id = "app-subhead">
+                    Heart Shaped Box Project
+                </p>
+            </div>
+        </div>
+        <div class = "content">
+            <div>
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div id="signature-out">
+                <div id="signature-in">
+                    <b>Dr. Lucas Foulon-Pinto</b><a href="https://www.linkedin.com/in/lucasfoulonpinto/" target="_blank" style = "text-decoration: none; font-size: 20px">🐊</a>
+                    <br>Pharm.D, Ph.D
+                    <br>Winter 2024 - <i>Version 1.0.0</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
